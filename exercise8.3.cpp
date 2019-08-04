@@ -1,3 +1,4 @@
+#if 0
 #include<iostream>
 using namespace std;
 #include<string>
@@ -15,6 +16,36 @@ bool PalindromeString(string str) {
 	}
 	return true;
 }
+class Solution {
+public:
+	int StrToInt(string str) {
+		int i;
+		if (str[0] = '-')
+		{
+			i = -1;
+		}
+		if (str[0] = '+')
+		{
+			i = 1;
+		}
+		int sum = 0;
+		int temp = 0;
+		for (int y = 1; y < str.size();i++)
+		{
+			if ('0' = < str[y] <= '9')
+			{
+				temp = str[y];
+			}
+			else
+				return 0;
+			if (int x = y + 1; x < str.size();)
+			{
+				sum = sum * 10 + temp;
+			}
+		}
+		return sum * i;
+	}
+};
 void test()
 {
 	string strA,strB,strtemp;
@@ -31,7 +62,12 @@ void test()
 	cout << count << endl;
 }
 int main() {
-	test();
+	//test();
+	string b = "231";
+	Solution a;
+	int x = a.StrToInt(b);
+	cout << x << endl;
 	system("pause");
 	return 0;
 }
+#endif
