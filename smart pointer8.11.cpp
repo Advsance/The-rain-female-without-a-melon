@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-#if 0
 namespace bite {
 	
 	template<class T>
@@ -54,26 +53,23 @@ public:
 		delete a;
 	}
 };
-void fun() {
+void fun44() {
 	test f;
 	test x=f;
 }
 
-void fun1(int* temp) {
+void fun132(int* temp) {
 	
 	SmartPtr<int> sp(temp);
 	temp[1]= 10;
 //	sp._ptr[1] = 10;
 }
-int  main() {
+int  main22() {
 	int* temp = new int[100];
 	 fun1(temp);
 	 delete temp;
 	return 0;
 }
-
-#endif
-#if 0
 template<class T>
 class SmartPtr
 {
@@ -130,6 +126,6 @@ int main() {
 	system("pause");
 	return 0;
 }
-#endif
+
 
 
