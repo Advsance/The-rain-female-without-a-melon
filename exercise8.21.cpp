@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include<string>
-
+#if 0
 int main() {
 	string A;
 	getline(cin , A);
@@ -70,3 +70,4 @@ public:
 		return pcur->next;
 	}
 };
+#endif 
