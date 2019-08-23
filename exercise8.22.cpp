@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 #include<time.h>
-#define BUFFSIZE 100000
+#define BUFFSIZE 100
 
 void printfe(int* arr, int n)
 {
