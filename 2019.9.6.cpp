@@ -3,6 +3,8 @@ using namespace std;
 #include<vector>
 #include<stack>
 #include<queue>
+
+#if 0
 struct BTNode {
 	BTNode(int data)
 		:_pleft(nullptr)
@@ -190,5 +192,48 @@ int main()
 	cout << endl;
 	InOrderNor(s);
 	system("pause");
+	return 0;
+}
+
+#endif
+
+template<class T>;
+
+struct BTNode {
+	BTNode(T data)
+		:_pLeft(nullptr)
+		,_pRight(nullptr)
+		,_data(data)
+	{}
+	BTNode*  _pLeft;
+	BTNode*  _pRight;
+	T*  _data;
+};
+
+
+BTNode*  CreateBinTree(const vector& arr ,int& index, const T& vain) {
+	BTNode* pRoot = nullptr;
+	if (index < arr.size() && arr[index] != vain)
+	{
+		pRoot = new BTNode(arr[index]);
+		pRoot->_pLeft= CreateBinTree(pRoot->_pLeft);
+		pRoot->_pRight=CreateBinTree(pRoot->_pRight);
+	}
+	return pRoot;
+}
+
+void Preorder(const BTNode* pRoot) {
+
+	if (pRoot)
+	{
+		
+	}
+}
+
+int main() {
+	
+ 	
+	
+	syetem("pause");
 	return 0;
 }
