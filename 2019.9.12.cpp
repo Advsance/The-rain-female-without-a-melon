@@ -118,7 +118,7 @@ void QuikSortS(int* arr, int left, int right)
 		while (arr[j] > arr[left] && i < j)
 			j--;
 		while (arr[i] < arr[left] && i < j)
-			i--;
+			i++;
 		if (i < j)
 			swap(arr[j], arr[i]);
 	}
