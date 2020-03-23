@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
+#include<queue>
+
 using namespace std;
 
 //DFS 深度优先算法
@@ -105,6 +107,7 @@ void DFS_1(vector<int>& box, vector<int>& book, int n, int index)
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
 
+
 #include<map>
 #include<unordered_map>
 // Employee info
@@ -119,7 +122,7 @@ public:
 	vector<int> subordinates;
 };
 
-class Solution {
+class Solution_DFS {
 public:
 	void DFS(unordered_map<int, Employee*> info, int& sum, int id)
 	{
@@ -145,6 +148,42 @@ public:
 	}
 };
 
+class Solution_BFS {
+public:
+	void BFS(vector<Employee*> employees, int& ret, int id)
+	{
+		unordered_map<int, Employee*> info;
+		for (auto& a : employees)
+		{
+			info[a->id] = a;
+		}
+
+		queue<Employee*> stor;
+		stor.push(info[id]);
+
+
+
+		while (!stor.empty())
+		{
+			int temp = stor.front()->id;
+			ret += info[temp]->importance;
+
+			for (auto& a : stor.front()->subordinates)
+			{
+				stor.push(info[a]);
+			}
+			stor.pop();
+		}
+	}
+	int getImportance(vector<Employee*> employees, int id) {
+		if (employees.empty())
+			return 0;
+
+		int ret = 0;
+		BFS(employees, ret, id);
+		return ret;
+	}
+};
 
 
 /*
@@ -261,23 +300,177 @@ public:
 
 		for (int i = 0; i < board.size(); i++)
 		{
-			for (int y = 0; y < board[i].size(); y++)
+			for (int y = 0; y < board[0].size(); y++)
 			{
 				if (board[i][y] == 'p')
-					board[i][y] == 'O';
-				else
+					board[i][y] = 'O';
+				else if(board[i][y]=='O')
 				{
-					board[i][y] == 'X';
+					board[i][y] = 'X';
 				}
 			}
 		}
 	}
 };
 
+/*
+岛的最大面积
+给定一个包含了一些 0 和 1 的非空二维数组 grid 。
+一个 岛屿 是由一些相邻的 1 (代表土地) 构成的组合，这里的「相邻」要求两个 1 必须在水平或者竖直方向上相邻。
+你可以假设 grid 的四个边缘都被 0（代表水）包围着。
+找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为 0 。)
+
+示例 1:
+[[0,0,1,0,0,0,0,1,0,0,0,0,0],
+ [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ [0,1,1,0,1,0,0,0,0,0,0,0,0],
+ [0,1,0,0,1,1,0,0,1,0,1,0,0],
+ [0,1,0,0,1,1,0,0,1,1,1,0,0],
+ [0,0,0,0,0,0,0,0,0,0,1,0,0],
+ [0,0,0,0,0,0,0,1,1,1,0,0,0],
+ [0,0,0,0,0,0,0,1,1,0,0,0,0]]
+对于上面这个给定矩阵应返回 6。注意答案不应该是 11 ，因为岛屿只能包含水平或垂直的四个方向的 1 。
+示例 2:
+[[0,0,0,0,0,0,0,0]]
+对于上面这个给定的矩阵, 返回 0。
+
+注意: 给定的矩阵grid 的长度和宽度都不超过 50。
+*/
+int dire[4][2] = { {1,0},{-1,0},{0,1},{0,-1} };
+
+
+class Solution_grid {
+public:
+	void DFS(vector<vector<int>>& grid, int cow, int low, int& temp)
+	{
+		temp++;
+	//	cout << "cow: " << cow << "  low: " << low<<"  temp: "<<temp << endl;
+		grid[cow][low] = 2; 
+		
+		for (int i = 0; i < 4; i++)
+		{
+			int cows = cow + dire[i][0];
+			int lows = low + dire[i][1];
+
+			if (cows >= 0 && cows < grid.size() && lows >= 0 && lows < grid[0].size())
+			{
+				if (grid[cows][lows] == 1)
+				{
+					DFS(grid, cows, lows, temp);
+				}
+			}
+		}
+	}
+
+	int maxAreaOfIsland(vector<vector<int>>& grid) {
+		if (grid.empty())
+			return 0;
+
+		int max = 0;
+		int cow = grid.size();
+		int low = grid[0].size();
+		for (int i = 0; i < cow; i++)
+		{
+			for (int y = 0; y < low; y++)
+			{
+				if (grid[i][y] == 1)
+				{
+					int temp = 0;
+					 DFS(grid, i, y, temp);
+					 if (temp > max)
+						 max = temp;
+				}
+			}
+		}
+		
+		return max;
+	}
+};
+
+
+void test_gird()
+{
+	vector<vector<int>> arr = { {1, 1, 0, 0, 0},{1, 1, 0, 0, 0},{0, 0, 0, 1, 1},{0, 0, 0, 1, 1} };
+	Solution_grid a;
+	int max = a.maxAreaOfIsland(arr);
+	cout << max;
+}
+
+
+
+// 广度优先搜索BFS
+
+/*
+	迷宫的例子:
+*/
+
+class path {
+public:
+	int x;
+	int y;
+	path(int _x, int _y)
+		:x(_x)
+		, y(_y)
+	{}
+};
+
+bool BFS(vector<vector<int>> road, int cow, int low, int endx, int endy)
+{
+	queue<path> stor;
+	path a(cow, low);
+	vector<vector<int>> book(road.size(), vector<int>(road[0].size(), 0));
+	stor.push(a);
+	book[cow][low] = 1;
+
+	while (!stor.empty())
+	{
+		if (stor.front().x == endx && stor.front().y == endy)
+			return true;
+	
+		for (int i = 0; i < 4; i++)
+		{
+			int cows = stor.front().x + dire[i][0];
+			int lows = stor.front().y + dire[i][1];
+
+			if (cows >= 0 && cows < road.size() && lows >= 0 && lows < road[0].size())
+			{
+				if (road[cows][lows] == 0 && book[cows][lows] == 0)
+				{
+					path temp(cows, lows);
+					stor.push(temp);
+					book[cows][lows] = 1;
+				}
+			}
+		}
+		stor.pop();
+	}
+
+	return false;
+}
+
 int main()
 {
-	test_DFS();
-	cout << a;
+	int size_x, size_y;
+	cin >> size_x >> size_y;
+
+	vector<vector<int>> road(size_x, vector<int>(size_y, 0));
+
+	for (int x = 0; x < size_x; x++)
+	{
+		for (int y = 0; y < size_y; y++)
+		{
+			 cin>> road[x][y];
+		}
+	}
+
+	while (1)
+	{
+		int start_x, start_y, end_x, end_y;
+		cin >> start_x >> start_y >> end_x >> end_y;
+		cout << BFS(road, start_x, start_y, end_x, end_y);
+	}
+	
+
 	return 0;
 }
 
