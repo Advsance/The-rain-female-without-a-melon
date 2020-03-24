@@ -425,7 +425,7 @@ bool BFS(vector<vector<int>> road, int cow, int low, int endx, int endy)
 	while (!stor.empty())
 	{
 		if (stor.front().x == endx && stor.front().y == endy)
-			return true;
+			return true; 
 	
 		for (int i = 0; i < 4; i++)
 		{
@@ -470,8 +470,54 @@ int main()
 		cout << BFS(road, start_x, start_y, end_x, end_y);
 	}
 	
-
+	
 	return 0;
 }
 
 
+
+// Definition for a Node.
+class Node {
+public:
+	int val;
+	vector<Node*> children;
+
+	Node() {}
+
+	Node(int _val) {
+		val = _val;
+	}
+
+	Node(int _val, vector<Node*> _children) {
+		val = _val;
+		children = _children;
+	}
+};
+
+class Solution {
+public:
+	vector<vector<int>> levelOrder(Node* root) {
+		vector<vector<int>> ret;
+		if (root == nullptr)
+			return ret;
+
+		queue<Node*> Que;
+		Que.push(root);
+		while (!Que.empty())
+		{
+			vector<int> tier;
+			int i = Que.size();
+			while (i--)
+			{
+				tier.push_back(Que.front()->val);
+				for (auto& a : Que.front()->children)
+				{
+					Que.push(a);
+				}
+				Que.pop();
+			}
+			ret.push_back(tier);
+		}
+		
+	}
+};

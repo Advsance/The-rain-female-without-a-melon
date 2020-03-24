@@ -1,0 +1,37 @@
+﻿  smart pointer8.11.cpp
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(69): error C3861: “fun1”: 找不到标识符
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(101): error C2953: “SmartPtr”: 类模板已经定义
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(112): error C2514: “SmartPtr”: 类没有构造函数
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(115): error C2514: “SmartPtr”: 类没有构造函数
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(116): error C2676: 二进制“[”:“SmartPtr”不定义该运算符或到预定义运算符可接收的类型的转换
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(117): error C2676: 二进制“[”:“SmartPtr”不定义该运算符或到预定义运算符可接收的类型的转换
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(118): error C2676: 二进制“[”:“SmartPtr”不定义该运算符或到预定义运算符可接收的类型的转换
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(118): error C2088: “[”: 对于 class 非法
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(119): error C2514: “SmartPtr”: 类没有构造函数
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(120): error C2819: “SmartPtr”类型没有重载成员“operator ->”
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(120): note: 是否改用“.”?
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(120): error C2039: “_month”: 不是“SmartPtr”的成员
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(121): error C2039: “->”: 不是“SmartPtr”的成员
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(122): error C2819: “SmartPtr”类型没有重载成员“operator ->”
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(122): note: 是否改用“.”?
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(122): error C2039: “_year”: 不是“SmartPtr”的成员
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(123): error C2819: “SmartPtr”类型没有重载成员“operator ->”
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(123): note: 是否改用“.”?
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(123): error C2039: “_month”: 不是“SmartPtr”的成员
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(124): error C2374: “sp”: 重定义；多次初始化
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(115): note: 参见“sp”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(124): error C2514: “SmartPtr”: 类没有构造函数
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(74): note: 参见“SmartPtr”的声明
+c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(125): error C2664: “void fun1(SmartPtr)”: 无法将参数 1 从“SmartPtr”转换为“SmartPtr”
+  c:\users\罗强\source\repos\异常\异常\smart pointer8.11.cpp(125): note: 由于复制构造函数不明确或没有可用的复制构造函数，因此无法复制构造 class“SmartPtr”

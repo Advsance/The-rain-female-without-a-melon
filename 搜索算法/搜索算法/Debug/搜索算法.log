@@ -1,1 +1,11 @@
-﻿
+﻿  pch.cpp
+  搜索算法.cpp
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(223): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(276): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(285): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(293): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(301): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(303): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(355): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(435): warning C4018: “<”: 有符号/无符号不匹配
+d:\git\the-rain-female-without-a-melon\搜索算法\搜索算法\搜索算法.cpp(474): error C2065: “ps”: 未声明的标识符
