@@ -1,0 +1,14 @@
+﻿  test.cpp
+c:\users\罗强\source\repos\test\test\test.cpp(3): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
+  c:\users\罗强\source\repos\test\test\test.cpp: note: 参见“_CRT_SECURE_NO_WARNINGS”的前一个定义
+c:\users\罗强\source\repos\test\test\test.cpp(3): warning C4603: “_CRT_SECURE_NO_WARNINGS”: 未定义宏或在预编译头使用后定义发生改变
+  c:\users\罗强\source\repos\test\test\test.cpp(3): note: 将宏添加到预编译头中，而不是在此处定义
+  c:\users\罗强\source\repos\test\test\test.cpp(4): note: 使用预编译头
+c:\users\罗强\source\repos\test\test\test.cpp(292): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\罗强\source\repos\test\test\test.cpp(298): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+c:\users\罗强\source\repos\test\test\string.h(1): warning C4005: “_CRT_SECURE_NO_WARNINGS”: 宏重定义
+  c:\users\罗强\source\repos\test\test\pch.cpp: note: 参见“_CRT_SECURE_NO_WARNINGS”的前一个定义
+c:\users\罗强\source\repos\test\test\string.h(20): warning C4267: “初始化”: 从“size_t”转换到“char”，可能丢失数据
+c:\users\罗强\source\repos\test\test\string.h(29): warning C4267: “初始化”: 从“size_t”转换到“char”，可能丢失数据
+c:\users\罗强\source\repos\test\test\string.h(37): warning C4267: “初始化”: 从“size_t”转换到“char”，可能丢失数据
+  test.vcxproj -> C:\Users\罗强\source\repos\test\x64\Debug\test.exe

@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  ConsoleApplication1.cpp
+d:\git\the-rain-female-without-a-melon\consoleapplication1\consoleapplication1\consoleapplication1.cpp(26): error C2039: “get”: 不是“test”的成员
+  d:\git\the-rain-female-without-a-melon\consoleapplication1\consoleapplication1\consoleapplication1.cpp(5): note: 参见“test”的声明

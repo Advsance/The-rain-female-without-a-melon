@@ -448,7 +448,7 @@ bool BFS(vector<vector<int>> road, int cow, int low, int endx, int endy)
 	return false;
 }
 
-int main()
+int main1()
 {
 	int size_x, size_y;
 	cin >> size_x >> size_y;
@@ -521,3 +521,6 @@ public:
 		
 	}
 };
+
+
+
